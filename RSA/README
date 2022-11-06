@@ -1,0 +1,41 @@
+==================== ____  ____    _    |  _ \/ ___|  / \   | |_) \___ \ / _
+\  |  _ < ___) / ___ \ |_| \_\____/_/   \_\
+                    
+=====================
+
+Good news, everyone! You get to implement your own implementation of RSA from
+scratch. Refer to the lecture notes on how RSA works.
+
+You have to code up the following things:
+
+1) Make primes. Given a certain int, find the next prime at or past it. I
+recommend using the Miller Rabin function in the Boost Multiprecision library
+
+Use your knowledge of RSA to generate the RSA constants (P,Q,N,T,D,E). E is
+done for you already.
+
+2) Encode and decode strings. To encode a string, you add the ASCII value of a
+character to a bigint, and then shift it 8 bits to the left (or multiply by
+256, same thing) and add the next letter in. So if you want to encode "ABC", A
+has an ASCII value of 65, and B has an ASCII value of 66, etc., so your bigint
+grows like this:
+
+Before: 0 After processing the A: 65 Shift the bits 8 to the left (same as
+multiplying by 256): 16640 Add B (66) in: 16706 Shift the bits 8 to the left:
+4276736 Add C (67) in: 4276803
+
+To decode you go the other way: you modulus by 256 to get the last character
+out, then shift the bits right, and repeat.
+
+3) You will do RSA encrypting and decrypting:
+
+Encrypt: Given a message M encoded as an int, compute the secret S that will
+be sent over the internet like this: S = M^E mod N
+
+Decrypt: Given a secret S encoded as an int, compute the original message M
+like this: M = S^D mod N
+
+N is the product of the two secret primes P & Q, E is usually 65537, D is the
+modular inverse of E given T (T = (P-1)*(Q-1)).
+
+I give you the function to compute the modular inverse.
