@@ -1,0 +1,40 @@
+================================================================================
+Playing Code Golf with DeMorgan
+================================================================================
+
+Debugging complicated if statements is a pain.
+
+For this assignment, you must simplify the if statements as much as possible,
+while still maintaining correctness.
+
+Basically, you must write a "you" function that will have the minimum number
+of characters in it.
+
+The program will test the correctness of your function against mine, and then
+output to you.txt the number of characters it took you.
+
+Then do it again for you2(). (I.e. match correctness of me2() in the minimum
+number of characters.)
+
+1) YOU MAY ONLY EDIT THE FILE BETWEEN THE PAIRS OF CUTPOINTS
+2) IF YOU PUT ANY CODE OUTSIDE THE COMMENTS SHOWING WHERE TO WRITE YOU WILL GET A
+ZERO.
+3) You are welcome to eliminate whitespace to save on characters
+4) You are welcome to use preprocessor macros to eliminate characters, but
+remember, they must still be within the cutpoints.
+5) Do not just copy and paste my if statement without simplifying it.
+
+Scoring is based on correctness and total character count:
+Correctness:            7 points
+<= 69 characters:      +5   points
+70 to  79 characters:  +4.5 points
+80 to  89 characters:  +4   points
+90 to  99 characters:  +3.5 points
+100 to 110 characters: +3   points
+111 to 120 characters: +2   points
+121 to 130 characters: +1   points
+
+10 points = 100%
+
+If you want to see your current score, type "cat you*" and add up the two
+numbers
