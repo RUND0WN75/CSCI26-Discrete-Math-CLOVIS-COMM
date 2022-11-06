@@ -1,0 +1,92 @@
+================================================
+ _   _    _    _        ___   ___   ___   ___
+| | | |  / \  | |      / _ \ / _ \ / _ \ / _ \
+| |_| | / _ \ | |     | (_) | | | | | | | | | |
+|  _  |/ ___ \| |___   \__, | |_| | |_| | |_| |
+|_| |_/_/   \_\_____|    /_/ \___/ \___/ \___/
+
+================================================
+
+For this assignment, you will create a simple AI.
+
+It will be given a number of rules, and then you
+can query it to find out what it knows about things.
+
+There are six commands you must implement:
+
+1) An IS-A rule
+
+For example, "SOCRATES IS A MAN" says that the element "SOCRATES" is part of
+the set "MAN".
+
+2) An ALL-ARE rule
+
+For example, "ALL MAN ARE MORTALS" (don't worry about plurals, your grammar
+will be weird, and that's okay) establishes that all elements in the set "MAN" are in
+the set of "MORTALS".
+
+Sets can be part of multiple sets, for example cats could be both part of mammals
+and quadrapeds.
+
+3) A SOME-ARE rule
+
+For example, "SOME CATS ARE NICE" means that some elements of the set CATS are
+in the set NICE.
+
+4) A NONE-ARE rule
+
+For example, "NO CATS ARE NICE" means that no elements of the set CATS are in
+the set NICE.
+
+5) Ask a question
+
+This is where you actually make an inference from what you know - you print
+everything about the set or element in question.
+
+For example, if you know that 
+SOCRATES IS A MAN
+ALL MAN ARE MORTAL
+SOME MORTAL ARE NICE
+NO MORTAL ARE LIVEFOREVER
+
+and then you ask what you know about Socrates, it will tell you:
+SOCRATES
+SOCRATES IS A MAN
+SOCRATES IS MORTAL
+SOCRATES MAY BE NICE
+SOCRATES IS NOT LIVEFOREVER
+
+6) Deactivate the HAL 9000
+
+Quits with a line from 2001. This should be done for you.
+
+==================================================
+
+Extra Credit:
+1) Detect Contradictions. For example, you can set it up so that BESTLEE is
+both SMART and NOT SMART. This should print an error: "CONTRADICTION!" and
+quit.
+
+2) Detect Loops. For example if ALL MAN ARE MORTAL and ALL MORTAL ARE MAN this
+is circular reasoning. This should print an error: "CIRCULAR REASONING!" and
+quit.
+
+==================================================
+
+Hints:
+There are two functions at the top of the file that will make your life easy:
+
+void map_insert(multimap<string,string> &m,const string &a,const string &b)
+
+This function adds an association between one string and another. You'll need
+one such map for each of the four categories of things you can insert. Just
+use this function to make an association. For example, if you have a map
+called IS_A, then in your function you can call
+map_insert(IS_A,"SOCRATES","MORTAL"); and this will mean SOCRATES IS A MORTAL.
+
+vector<string> map_search(const multimap<string,string> &m, const string &a)
+
+For example, if you call map_search(IS_A,"SOCRATES") this will return
+everything that SOCRATES IS, as a vector of strings.
+
+You will then feed all of the results from the vector into further searches.
