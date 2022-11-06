@@ -1,0 +1,73 @@
+==========================================
+ ____ ___ ____   __  __    _  _____ _   _ 
+| __ )_ _/ ___| |  \/  |  / \|_   _| | | |
+|  _ \| | |  _  | |\/| | / _ \ | | | |_| |
+| |_) | | |_| | | |  | |/ ___ \| | |  _  |
+|____/___\____| |_|  |_/_/   \_\_| |_| |_|
+                                          
+==========================================
+
+For this assignment you will learn how to use one of the more common "Big Int"
+libraries out there, called Boost Multiprecision. Whereas normal ints clock in
+at 8, 16, 32, or 64 bits (using int16_t or whatever), big ints have
+effectively unlimited number of bits in them (basically limited by your
+system's RAM). They can be added, subtracted, modulused, etc., just like
+ordinary ints, which is nice. You can even pass them to functions like pow(),
+sin(), abs(), and those all work too except maybe sqrt().
+
+You will be re-implementing the "Simple Calculator" assignment from CSCI 40,
+except with big ints and big floats (big floats have 100 digits of precision)
+instead of the boring old ints we used to use.
+
+You also have to implement a few more operations than just basic arithmetic -
+you'll need to do exponentiation, be able to do exponentiation with modulus
+(x^y % z), tell if a bigint is a prime or not, factorial, and also perform
+a simple Reimann sum approximation of a definite integral. For the integral,
+perform a left Reimann sum with a rectangle size of 0.001:
+https://en.wikipedia.org/wiki/Riemann_sum#Left_Riemann_sum
+
+Most of this should be pretty easy and straightforward, with pretty much
+everything being one line of code except the integral, so the integral will be
+worth more points.
+
+You can use any library call or source code you can find from the Boost
+Multiprecision Library. Documentation for this library is here:
+https://www.boost.org/doc/libs/1_74_0/libs/multiprecision/doc/html/index.html
+
+You don't need to do anything fancy to compile the code, just "g++ main.cc".
+
+The first line of code causes all floats to print 100 digits of precision.
+Please leave it that way because the autograder will be expecting it.
+
+This code also uses my sweet Read library, which you can look at and admire in
+/public/read.h if you want to observe some of the greatest C++ code ever
+written.
+
+=====
+
+Sample run:
+ ____ ___ ____   __  __    _  _____ _   _
+| __ )_ _/ ___| |  \/  |  / \|_   _| | | |
+|  _ \| | |  _  | |\/| | / _ \ | | | |_| |
+| |_) | | |_| | | |  | |/ ___ \| | |  _  |
+|____/___\____| |_|  |_/_/   \_\_| |_| |_|
+
+Pick an option:
+0. Addition
+1. Subtraction
+2. Multiplication
+3. Division
+4. Modulus
+5. Factorial
+6. Exponentiation
+7. Exponentiation & Modulus
+8. Prime Testing
+9. Volume of a cylinder
+10. Integral
+(Anything else to quit)
+0
+Please enter the first integer:
+524357084235784325834575493875437985
+Please enter the second integer:
+4358709453908453089453895403895043354890345980
+524357084235784325834575493875437985 + 4358709453908453089453895403895043354890345980 = 4358709454432810173689679729729618848765783965
