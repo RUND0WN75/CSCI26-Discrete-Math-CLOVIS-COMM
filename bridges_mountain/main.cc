@@ -28,7 +28,7 @@ void findPath(int *img_arr, int imgWidth, int imgHeight, int startRow, int start
 int main(int argc, char **argv) {
 	const int bridges_project_id = 1001;
 	const string bridges_username = "RUND0WN";
-	const string bridges_api_key  = "1266555064775";
+	//const string bridges_api_key  = "";
 
 	//Delete this line once you get registered on BRIDGES
 	//static_assert(bridges_username != "username","You must register on BRIDGES and get your own usernsme and API key.");
